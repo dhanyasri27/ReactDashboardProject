@@ -1,0 +1,110 @@
+export const dashboardMetrics = [
+  {
+    title: "Total Customers",
+    value: "24,847",
+    change: "+12.5%",
+    isPositive: true,
+  },
+  {
+    title: "Total Revenue", 
+    value: "$847,293",
+    change: "+8.3%",
+    isPositive: true,
+  },
+  {
+    title: "Total Orders",
+    value: "15,642",
+    change: "+15.7%", 
+    isPositive: true,
+  },
+  {
+    title: "Total Returns",
+    value: "342",
+    change: "-2.4%",
+    isPositive: false,
+  },
+];
+
+export const productSalesData = [
+  { name: "Jan", grossMargin: 42000, revenue: 68000 },
+  { name: "Feb", grossMargin: 48000, revenue: 74000 },
+  { name: "Mar", grossMargin: 55000, revenue: 89000 },
+  { name: "Apr", grossMargin: 51000, revenue: 82000 },
+  { name: "May", grossMargin: 63000, revenue: 97000 },
+  { name: "Jun", grossMargin: 71000, revenue: 112000 },
+  { name: "Jul", grossMargin: 68000, revenue: 105000 },
+  { name: "Aug", grossMargin: 75000, revenue: 118000 },
+  { name: "Sep", grossMargin: 82000, revenue: 128000 },
+  { name: "Oct", grossMargin: 78000, revenue: 121000 },
+  { name: "Nov", grossMargin: 85000, revenue: 135000 },
+  { name: "Dec", grossMargin: 92000, revenue: 147000 },
+];
+
+export const salesByCategoryData = [
+  { name: "Electronics", value: 32, color: "hsl(var(--chart-1))" },
+  { name: "Clothing & Fashion", value: 28, color: "hsl(var(--chart-2))" },
+  { name: "Home & Garden", value: 18, color: "hsl(var(--chart-3))" },
+  { name: "Books & Media", value: 12, color: "hsl(var(--chart-4))" },
+  { name: "Sports & Outdoors", value: 10, color: "hsl(var(--chart-5))" },
+];
+
+export const salesByCountryData = [
+  { country: "United States", sales: "$342,850", percentage: 40.4 },
+  { country: "Germany", sales: "$186,240", percentage: 22.0 },
+  { country: "United Kingdom", sales: "$124,580", percentage: 14.7 },
+  { country: "Canada", sales: "$89,470", percentage: 10.6 },
+  { country: "France", sales: "$67,320", percentage: 7.9 },
+  { country: "Australia", sales: "$23,140", percentage: 2.7 },
+  { country: "Netherlands", sales: "$15,890", percentage: 1.9 },
+];
+
+export const ordersData = [
+  { id: "ORD-15847", customer: "Alexandra Chen", amount: "$1,249.99", status: "Completed" },
+  { id: "ORD-15848", customer: "Marcus Rodriguez", amount: "$687.50", status: "Processing" },
+  { id: "ORD-15849", customer: "Priya Patel", amount: "$359.00", status: "Shipped" },
+  { id: "ORD-15850", customer: "James McCarthy", amount: "$892.75", status: "Completed" },
+  { id: "ORD-15851", customer: "Fatima Al-Rashid", amount: "$456.25", status: "Processing" },
+  { id: "ORD-15852", customer: "Lars Andersson", amount: "$2,134.00", status: "Shipped" },
+  { id: "ORD-15853", customer: "Isabella Santos", amount: "$298.50", status: "Pending" },
+  { id: "ORD-15854", customer: "David Kim", amount: "$567.99", status: "Completed" },
+  { id: "ORD-15855", customer: "Sophie Dubois", amount: "$743.25", status: "Shipped" },
+  { id: "ORD-15856", customer: "Antonio Rossi", amount: "$1,876.00", status: "Processing" },
+  { id: "ORD-15857", customer: "Rachel Thompson", amount: "$234.99", status: "Completed" },
+  { id: "ORD-15858", customer: "Hiroshi Tanaka", amount: "$1,045.50", status: "Shipped" },
+  { id: "ORD-15859", customer: "Elena Petrov", amount: "$389.75", status: "Pending" },
+  { id: "ORD-15860", customer: "Carlos Mendoza", amount: "$654.99", status: "Completed" },
+  { id: "ORD-15861", customer: "Anya Kowalski", amount: "$1,523.25", status: "Processing" },
+];
+
+export const customersData = [
+  { name: "Alexandra Chen", email: "alexandra.chen@techcorp.com", country: "United States" },
+  { name: "Marcus Rodriguez", email: "m.rodriguez@innovate.mx", country: "Mexico" },
+  { name: "Priya Patel", email: "priya.patel@digitalsol.in", country: "India" },
+  { name: "James McCarthy", email: "james.mccarthy@greentech.ie", country: "Ireland" },
+  { name: "Fatima Al-Rashid", email: "f.alrashid@smartsys.ae", country: "UAE" },
+  { name: "Lars Andersson", email: "lars.andersson@nordicdesign.se", country: "Sweden" },
+  { name: "Isabella Santos", email: "isabella.santos@creativeplus.br", country: "Brazil" },
+  { name: "David Kim", email: "david.kim@futurewave.kr", country: "South Korea" },
+  { name: "Sophie Dubois", email: "sophie.dubois@elegance.fr", country: "France" },
+  { name: "Antonio Rossi", email: "antonio.rossi@bellavista.it", country: "Italy" },
+  { name: "Rachel Thompson", email: "rachel.thompson@brightideas.ca", country: "Canada" },
+  { name: "Hiroshi Tanaka", email: "h.tanaka@precision.jp", country: "Japan" },
+  { name: "Elena Petrov", email: "elena.petrov@quantum.ru", country: "Russia" },
+  { name: "Carlos Mendoza", email: "carlos.mendoza@soluciones.es", country: "Spain" },
+  { name: "Anya Kowalski", email: "anya.kowalski@nextstep.pl", country: "Poland" },
+  { name: "Mohammed Hassan", email: "m.hassan@globaltech.eg", country: "Egypt" },
+  { name: "Lisa Zhang", email: "lisa.zhang@innovations.cn", country: "China" },
+  { name: "Oliver Schmidt", email: "oliver.schmidt@precision.de", country: "Germany" },
+  { name: "Camila Fernandez", email: "camila.fernandez@creativos.cl", country: "Chile" },
+  { name: "Raj Krishnamurthy", email: "raj.krishna@smartsolutions.in", country: "India" },
+  { name: "Emma Thompson", email: "emma.thompson@brightspark.co.uk", country: "United Kingdom" },
+  { name: "Jean-Pierre Moreau", email: "jp.moreau@excellence.fr", country: "France" },
+  { name: "Ana Müller", email: "ana.mueller@innovative.at", country: "Austria" },
+  { name: "Nikolai Volkov", email: "n.volkov@techadvance.ru", country: "Russia" },
+  { name: "Maria Gonzalez", email: "maria.gonzalez@dynamico.mx", country: "Mexico" },
+  { name: "Yuki Yamamoto", email: "yuki.yamamoto@precision.jp", country: "Japan" },
+  { name: "Thomas Anderson", email: "thomas.anderson@nordictech.no", country: "Norway" },
+  { name: "Leila Mahmoud", email: "leila.mahmoud@moderntech.ma", country: "Morocco" },
+  { name: "Francesco Bianchi", email: "f.bianchi@innovazione.it", country: "Italy" },
+  { name: "Sarah O'Connor", email: "sarah.oconnor@emeraldtech.ie", country: "Ireland" },
+];
