@@ -1,3 +1,4 @@
+import { Pagination } from "@/components/ui/pagination";
 import { Card } from "@/components/ui/card";
 import { customersData } from "@/data/dashboard-data";
 import { Users, Mail, MapPin, Search } from "lucide-react";
@@ -14,6 +15,8 @@ import {
 
 const Customers = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   const filteredCustomers = customersData.filter((customer) => {
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -23,6 +26,15 @@ const Customers = () => {
       customer.country.toLowerCase().includes(lowerCaseSearchTerm)
     );
   });
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredCustomers.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredCustomers.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="space-y-6">
@@ -91,7 +103,7 @@ const Customers = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredCustomers.map((customer, index) => (
+              {currentItems.map((customer, index) => (
                 <TableRow key={index} className="border-b border-border/50 last:border-0 hover:bg-muted/50 transition-colors">
                   <TableCell className="py-4 px-2">
                     <div className="flex items-center space-x-3">
@@ -120,6 +132,15 @@ const Customers = () => {
             </TableBody>
           </Table>
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          totalItems={filteredCustomers.length}
+          itemsPerPage={itemsPerPage}
+          indexOfFirstItem={indexOfFirstItem}
+          indexOfLastItem={indexOfLastItem}
+        />
       </Card>
     </div>
   );

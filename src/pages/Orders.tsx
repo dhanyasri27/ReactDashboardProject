@@ -1,3 +1,4 @@
+import { Pagination } from "@/components/ui/pagination";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ordersData } from "@/data/dashboard-data";
@@ -38,6 +39,8 @@ const getStatusColor = (status: string) => {
 const Orders = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   const filteredOrders = ordersData.filter((order) => {
     const matchesSearch =
@@ -47,6 +50,15 @@ const Orders = () => {
       filterStatus === "all" || order.status === filterStatus;
     return matchesSearch && matchesStatus;
   });
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredOrders.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="space-y-6">
@@ -126,7 +138,7 @@ const Orders = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredOrders.map((order) => (
+              {currentItems.map((order) => (
                 <TableRow key={order.id} className="border-b border-border/50 last:border-0 hover:bg-muted/50 transition-colors">
                   <TableCell className="py-4 px-2">
                     <span className="text-sm font-medium text-foreground">{order.id}</span>
@@ -147,6 +159,15 @@ const Orders = () => {
             </TableBody>
           </Table>
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          totalItems={filteredOrders.length}
+          itemsPerPage={itemsPerPage}
+          indexOfFirstItem={indexOfFirstItem}
+          indexOfLastItem={indexOfLastItem}
+        />
       </Card>
     </div>
   );

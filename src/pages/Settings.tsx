@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Settings as SettingsIcon, User, Lock, Bell, Shield } from "lucide-react";
+import { Settings as SettingsIcon, User, Lock } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const Settings = () => {
@@ -33,7 +33,7 @@ const Settings = () => {
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Profile Settings */}
-        <Card className="p-6">
+        <Card className="p-6 border-2 border-gray-400">
           <div className="flex items-center space-x-3 mb-4">
             <User className="h-5 w-5 text-primary" />
             <h3 className="text-lg font-semibold text-foreground">Profile Settings</h3>
@@ -62,7 +62,7 @@ const Settings = () => {
         </Card>
 
         {/* Security Settings */}
-        <Card className="p-6">
+        <Card className="p-6 border-2 border-gray-400">
           <div className="flex items-center space-x-3 mb-4">
             <Lock className="h-5 w-5 text-primary" />
             <h3 className="text-lg font-semibold text-foreground">Security</h3>
@@ -84,99 +84,13 @@ const Settings = () => {
               <Input id="confirm-password" type="password" />
             </div>
             
-            <Button onClick={handleSave} variant="secondary" className="w-full">
+            <Button onClick={handleSave} className="w-full">
               Change Password
             </Button>
           </div>
         </Card>
 
-        {/* Notifications */}
-        <Card className="p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <Bell className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold text-foreground">Notifications</h3>
-          </div>
-          
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Email Notifications</p>
-                <p className="text-xs text-muted-foreground">Receive updates via email</p>
-              </div>
-              <Button variant="outline" size="sm">
-                Enable
-              </Button>
-            </div>
-            
-            <Separator />
-            
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Push Notifications</p>
-                <p className="text-xs text-muted-foreground">Receive push notifications</p>
-              </div>
-              <Button variant="outline" size="sm">
-                Enable
-              </Button>
-            </div>
-            
-            <Separator />
-            
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Weekly Reports</p>
-                <p className="text-xs text-muted-foreground">Get weekly analytics reports</p>
-              </div>
-              <Button variant="outline" size="sm">
-                Enable
-              </Button>
-            </div>
-          </div>
-        </Card>
 
-        {/* Privacy & Security */}
-        <Card className="p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <Shield className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold text-foreground">Privacy & Security</h3>
-          </div>
-          
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Two-Factor Authentication</p>
-                <p className="text-xs text-muted-foreground">Add an extra layer of security</p>
-              </div>
-              <Button variant="outline" size="sm">
-                Setup
-              </Button>
-            </div>
-            
-            <Separator />
-            
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Login Activity</p>
-                <p className="text-xs text-muted-foreground">View recent login activity</p>
-              </div>
-              <Button variant="outline" size="sm">
-                View
-              </Button>
-            </div>
-            
-            <Separator />
-            
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">Data Export</p>
-                <p className="text-xs text-muted-foreground">Download your data</p>
-              </div>
-              <Button variant="outline" size="sm">
-                Export
-              </Button>
-            </div>
-          </div>
-        </Card>
       </div>
     </div>
   );

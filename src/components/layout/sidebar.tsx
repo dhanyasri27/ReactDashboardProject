@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/lib/theme-provider";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import {
   LayoutDashboard,
   ShoppingBag,
@@ -13,8 +15,6 @@ import {
   BookOpen,
   Receipt,
   Settings,
-  Moon,
-  Sun,
   Menu,
   X
 } from "lucide-react";
@@ -35,10 +35,6 @@ const menuItems = [
 export function Sidebar({ isCollapsed, onToggle }: ISidebarProps) {
   const location = useLocation();
   const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
 
   return (
     <div className={cn(
@@ -89,25 +85,21 @@ export function Sidebar({ isCollapsed, onToggle }: ISidebarProps) {
 
         {/* Footer - Theme Toggle */}
         <div className="p-2 border-t border-border">
-          <Button
-            variant="ghost"
-            onClick={toggleTheme}
-            className={cn(
-              "w-full justify-start h-10 px-3",
-              isCollapsed && "justify-center px-2"
-            )}
-          >
-            {theme === "dark" ? (
-              <Sun className="h-4 w-4 flex-shrink-0" />
-            ) : (
-              <Moon className="h-4 w-4 flex-shrink-0" />
-            )}
-            {!isCollapsed && (
-              <span className="ml-3 truncate">
-                {theme === "dark" ? "Light Mode" : "Dark Mode"}
-              </span>
-            )}
-          </Button>
+          <div className="flex items-center justify-center">
+            <Label htmlFor="theme-switch" className="mr-2">
+              Light
+            </Label>
+            <Switch
+              id="theme-switch"
+              checked={theme === "dark"}
+              onCheckedChange={(checked) => {
+                setTheme(checked ? "dark" : "light");
+              }}
+            />
+            <Label htmlFor="theme-switch" className="ml-2">
+              Dark
+            </Label>
+          </div>
         </div>
       </div>
     </div>
