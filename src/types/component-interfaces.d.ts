@@ -1,6 +1,5 @@
 import { LucideIcon } from "lucide-react";
 
-// Interface for Dashboard component (no props)
 export interface IDashboardProps {}
 
 // Interface for MetricCard component
